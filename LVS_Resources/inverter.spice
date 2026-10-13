@@ -1,0 +1,16 @@
+** sch_path: /Users/madelinetang/inverter.sch
+**.subckt inverter A VGND VNB VPB VPWR Y
+*.ipin A
+*.ipin VGND
+*.ipin VNB
+*.ipin VPB
+*.ipin VPWR
+*.ipin Y
+MM1 Y A VGND VNB sky130_fd_pr__nfet_01v8 L=0.15u W=0.65u nf=1 ad=expr('int((1 + 1)/2) * 0.65u / 1 * 0.29') as=expr('int((1 + 2)/2) * 0.65u / 1 * 0.29')
++ pd=expr('2*int((1 + 1)/2) * (0.65u / 1 + 0.29)') ps=expr('2*int((1 + 2)/2) * (0.65u / 1 + 0.29)') nrd=expr('0.29 / 0.65u ') nrs=expr('0.29 / 0.65u ')
++ sa=0 sb=0 sd=0 mult=1 m=1
+MM2 Y A VPWR VPB sky130_fd_pr__pfet_01v8_hvt L=0.15u W=1.0u nf=1 ad=expr('int((1 + 1)/2) * 1.0u / 1 * 0.29') as=expr('int((1 + 2)/2) * 1.0u / 1 * 0.29')
++ pd=expr('2*int((1 + 1)/2) * (1.0u / 1 + 0.29)') ps=expr('2*int((1 + 2)/2) * (1.0u / 1 + 0.29)') nrd=expr('0.29 / 1.0u ') nrs=expr('0.29 / 1.0u ')
++ sa=0 sb=0 sd=0 mult=1 m=1
+**.ends
+.end
